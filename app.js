@@ -31,19 +31,15 @@ wss.on('connection', ws => {
 
 function sendAll(msg, ws) {
   for(var i = 0; i < clients.length; i ++) {
-    var type;
     if (i === clients.indexOf(ws)) {
-      type = 'self'
     } else {
-      type = 'others'
+      clients[i].send(JSON.stringify({
+        content: msg,
+        portrait: 'http://localhost:5000/jiongun.jpg',
+        date: Date.now()
+      }))
     }
 
-    clients[i].send(JSON.stringify({
-      type: type,
-      content: msg,
-      portrait: 'http://localhost:5000/jiongun.jpg',
-      date: Date.now()
-    }))
   }
 }
 
