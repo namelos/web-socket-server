@@ -1,5 +1,5 @@
 $(function() {
-  var ws = new WebSocket('ws://localhost:4000');
+  var ws = new WebSocket('ws://localhost:8000');
   $('button').click(function() {
       ws.send($('input').val());
   });
