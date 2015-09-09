@@ -1,7 +1,8 @@
 $(function() {
   var ws = new WebSocket('ws://localhost:8000');
-  $('button').click(function() {
-      ws.send($('input').val());
+  $('#submit').click(function(e) {
+    e.preventDefault();
+      ws.send($('#msg').val());
   });
   ws.onmessage = function(data) {
 
@@ -9,7 +10,7 @@ $(function() {
     console.log(d);
     $('ul').append('<li>'
         + '<img src=' + d.portrait + ' alt="portrait" class="img">'
-        + '客户端:' + d.id
+        + '客户端:' + d.type
         + '日期: ' + d.date
         + '<br />'
         + '<p>' + d.content + '</p>'

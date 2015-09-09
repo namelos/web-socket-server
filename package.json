@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-core": "^5.8.23",
+    "bootstrap": "^3.3.5",
     "express": "^4.13.3",
     "ws": "^0.8.0"
   }

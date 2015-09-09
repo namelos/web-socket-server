@@ -1,15 +1,31 @@
 <!Doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="bootstrap.theme.css">
+    <link rel="stylesheet" href="bootstrap.css">
     <style>
       .img {
         height: 50px;
       }
+      body {
+        padding: 50px;
+      }
+      li {
+        margin: 30px;
+      }
+      p {
+        font-size: 30px;
+      }
     </style>
   </head>
   <body>
-    <input type="text">
-    <button>Click</button>
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="msg">文本框</label>
+      <input class="form-control" id="msg" placeholder="请输入内容" type="text">
+    </div>
+    <button id="submit" class="btn btn-default">Click</button>
+  </form>
     <ul></ul>
     <script src="jquery.js"></script>
     <script src="client.js"></script>
